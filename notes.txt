@@ -1,0 +1,158 @@
+---------- COLLECTION: Employees ----------
+
+18 eg employees [
+    {
+        id: String,
+        firstname: String,
+        lastname: String,
+        photo: String,
+        supervisor: Object,
+        company: String,
+        jobTitle: String,
+        yearsOfService: Number,
+        gender: String,
+        assessmentResults: {
+            scores: {
+                s1: Number,
+                s2: Number,
+                s3: Number,
+                s4: Number,
+                s5: Number,
+                s6: Number,
+                s7: Number,
+                s8: Number,
+                s9: Number,
+                s10: Number,
+                s11: Number,
+                s12: Number,
+            },
+            class: {
+                strategist: (s1 + s2 + s3) / 3,
+                resultsDriver: (s4 + s5 + s6) / 3,
+                teacher: (s7 + s8 + s9) / 3,
+                relationshipBuilder: (s10 + s11 + s12) / 3
+            },
+            competency: {
+                versatility: (s1 + s2 + s3 + s4) / 4,
+                leadershipAccountability: (s4 + s5 + s6 + s7) / 4,
+                selfDevelopment: (s8 + s9 + s10 + s11) / 4
+            }
+        },
+        learningPlan: {
+            goals: [
+                {
+                    title: String,
+                    subtitle: String,
+                    icon: String,
+                    action: {
+                        title: String,
+                        fn: () => {}
+                    },
+                    completed: Boolean,
+                    dudeDate: Date,
+                    score: Number
+                },...
+            ]
+        },
+        metrics: {
+
+        },
+        blogPosts: {
+            title: String,
+            body: String,
+            date: Date,
+            comments: [
+                {
+                    ...
+                }
+            ]
+        },
+        avatar: {
+            gender: String,
+            hairStyle: Object,
+            hairColor: Object,
+            top: Object,
+            accessories: [...]
+        },
+        notifications: [
+            {
+                context: String,
+                messages: String,
+                action: {
+                    name: String,
+                    fn: () => {}
+                }
+            },...
+        ]
+    }
+]
+
+---------- COLLECTION: Managers ----------
+
+8 eg managers / admins [
+    id: String,
+    firstname: String,
+    lastname: String,
+    photo: String,
+    supervisor: Object,
+    company: String,
+    jobTitle: String,
+    yearsOfService: Number,
+    gender: String,
+    notifications: [
+        {
+            context: String,
+            messages: String,
+            action: {
+                name: String,
+                fn: () => {}
+            }
+        },...
+    ]
+]
+
+---------- COLLECTION: Companies ----------
+
+[
+    {
+        id: String,
+        name: String,
+        address: String,
+        phone: String,
+        logo: String,
+        participants: Number,
+        employeeFeedback: [
+            {
+
+            }
+        ],
+        financials: {
+            budget: Number,
+            roi: Number,
+            quarterlySpend: [
+                {
+                    year: Number,
+                    q1: Number,
+                    q2: Number,
+                    q3: Number,
+                    q4: Number
+                },...
+            ]
+        },
+        trainingSchedule: {
+            title: String,
+            date: Date,
+            location: String
+        }
+    },...
+]
+
+// --- QUESTIONS ---
+
+*slide 10* : Are reports automatic upon goal submission, 
+             or are they automatically submitted?
+*slide 10* : Is 'on-time delivery' based on reports?
+*slide 11* : Are tasks assigned by management, or are they 
+             part of lesson plan?
+*slide 14* : Employee feedback?
+*slide 15* : Training schedule (automatic vs manual)
